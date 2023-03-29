@@ -48,6 +48,11 @@ class Solution:
                         exit.board = move
 
                     exit.counter += entry.counter
+
+            if label == 1:
+                exit.estimate = a
+            else:
+                exit.estimate = b
                 
             return exit
 
