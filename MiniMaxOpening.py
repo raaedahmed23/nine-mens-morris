@@ -52,8 +52,8 @@ def GenerateRemove(board, L):
                 b = "".join(b)
                 L.append(b)
     
-    # if flag: 
-    #     L.append(board)
+    if flag: 
+        L.append(board)
 
     return L
 
@@ -231,7 +231,7 @@ def StaticEstimateMidEnd(board):
 def GenerateMovesOpeningBlack(board):
     tmp_board = reverse(board)
 
-    L = GenerateAdd(board)
+    L = GenerateAdd(tmp_board)
     L = [reverse(brd) for brd in L]
     return L
 

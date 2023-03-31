@@ -51,8 +51,7 @@ class Solution:
             return exit
 
         def run():
-            result = minmaxgame
-            (self.depth, self.curr_board, 1)
+            result = minmaxgame(self.depth, self.curr_board, 1)
             print('Board Position: ', result.board)
             print('Positions Evaluated by Static Estimaton:', result.counter)
             print('MINIMAX Estimate:', result.estimate)
