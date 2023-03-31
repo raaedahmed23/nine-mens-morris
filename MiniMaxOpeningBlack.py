@@ -54,7 +54,7 @@ class Solution:
             result = minmaxopening(self.depth, self.curr_board, 1)
             result.board = reverse(result.board)
             print('Board Position: ', result.board)
-            print('Positions Evaluated by Static Estimaton:', result.counter)
+            print('Positions Evaluated by Static Estimation:', result.counter)
             print('MINIMAX Estimate:', result.estimate)
             write_result(result.board)
 

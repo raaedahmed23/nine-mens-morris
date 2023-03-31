@@ -212,6 +212,10 @@ def StaticEstimateOpening(board):
 
     return num_white - num_black
 
+def StaticEstimateOpeningImproved(board):
+    pass
+
+
 def StaticEstimateMidEnd(board):
     num_white = board.count('W')
     num_black = board.count('B')
@@ -227,6 +231,9 @@ def StaticEstimateMidEnd(board):
         return 10000
     else:
         return 1000*(num_white - num_black) - num_black_moves
+    
+def StaticEstimateMidEndImproved(board):
+    pass
     
 def GenerateMovesOpeningBlack(board):
     tmp_board = reverse(board)
@@ -307,7 +314,7 @@ class Solution:
         def run():
             result = minmaxopening(self.depth, self.curr_board, 1)
             print('Board Position: ', result.board)
-            print('Positions Evaluated by Static Estimaton:', result.counter)
+            print('Positions Evaluated by Static Estimation:', result.counter)
             print('MINIMAX Estimate:', result.estimate)
             write_result(result.board)
 

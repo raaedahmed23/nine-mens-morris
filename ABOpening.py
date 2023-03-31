@@ -59,7 +59,7 @@ class Solution:
         def run():
             result = ABopening(self.depth, self.curr_board, MIN, MAX, 1)
             print('Board Position: ', result.board)
-            print('Positions Evaluated by Static Estimaton:', result.counter)
+            print('Positions Evaluated by Static Estimation:', result.counter)
             print('AB Estimate:', result.estimate)
             write_result(result.board)
 
