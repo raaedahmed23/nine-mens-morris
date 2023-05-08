@@ -213,7 +213,18 @@ def StaticEstimateOpening(board):
     return num_white - num_black
 
 def StaticEstimateOpeningImproved(board):
-    pass
+    num_white = board.count('W')
+    num_black = board.count('B')
+
+    white_mills = 0
+    black_mills = 0
+    for loc, piece in enumerate(board):
+        if piece == 'W' and closeMill(loc, board):
+            white_mills += 1
+        if piece == 'B' and closeMill(loc, board):
+            black_mills += 1 
+
+    return num_white + (3*(white_mills - black_mills)) - num_black
 
 
 def StaticEstimateMidEnd(board):
@@ -233,7 +244,28 @@ def StaticEstimateMidEnd(board):
         return 1000*(num_white - num_black) - num_black_moves
     
 def StaticEstimateMidEndImproved(board):
-    pass
+    white_mills = 0
+    black_mills = 0
+    for loc, piece in enumerate(board):
+        if piece == 'W' and closeMill(loc, board):
+            white_mills += 1
+        if piece == 'B' and closeMill(loc, board):
+            black_mills += 1 
+
+    num_white = board.count('W')
+    num_black = board.count('B')
+
+    possible_black_moves = GenerateMovesMidEndBlack(board)
+    num_black_moves = len(possible_black_moves)
+
+    if num_black <= 2:
+        return 10000
+    elif num_white <= 2:
+        return -10000
+    elif num_black_moves == 0:
+        return 10000
+    else:
+        return 1000*(num_white - num_black + white_mills) - num_black_moves
     
 def GenerateMovesOpeningBlack(board):
     tmp_board = reverse(board)

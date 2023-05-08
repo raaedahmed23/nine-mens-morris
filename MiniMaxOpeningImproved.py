@@ -1,5 +1,5 @@
 import sys 
-from MiniMaxOpening import GenerateMovesOpeningBlack, GenerateMovesOpening, StaticEstimateOpening, state
+from MiniMaxOpening import GenerateMovesOpeningBlack, GenerateMovesOpening, StaticEstimateOpeningImproved, state
 
 MIN = -9000000000000
 MAX = 9000000000000
@@ -26,7 +26,7 @@ class Solution:
                 exit.estimate = MIN
 
             if depth == 0: 
-                counter_final = StaticEstimateOpening(board) # improved estimate here
+                counter_final = StaticEstimateOpeningImproved(board)
                 exit = state(counter_final, exit.counter + 1, board)
                 return exit
             

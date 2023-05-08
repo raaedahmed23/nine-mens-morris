@@ -1,5 +1,5 @@
 import sys 
-from MiniMaxOpening import GenerateMovesMidEnd, GenerateMovesMidEndBlack, StaticEstimateMidEnd, state
+from MiniMaxOpening import GenerateMovesMidEnd, GenerateMovesMidEndBlack, StaticEstimateMidEndImproved, state
 
 MIN = -9000000000000
 MAX = 9000000000000
@@ -26,7 +26,7 @@ class Solution:
                 exit.estimate = MIN
 
             if depth == 0: 
-                counter_final = StaticEstimateMidEnd(board) #improved statistic here 
+                counter_final = StaticEstimateMidEndImproved(board)
                 exit = state(counter_final, exit.counter + 1, board)
                 return exit
             
