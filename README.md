@@ -5,7 +5,8 @@ The code is an attempt at an AI bot that plays the game of nine men morris imple
 
 The game can be played with multiple board layouts. The board for this game looks like this- 
 
-<img width="352" alt="Screenshot 2023-09-22 at 11 51 47 PM" src="https://github.com/raaedahmed23/nine-mens-morris/assets/63556268/8a82d2d0-f1e1-43fb-95a7-5f932d14f3b9"> 
+<img width="357" alt="image" src="https://github.com/raaedahmed23/nine-mens-morris/assets/63556268/cf9b45f0-d5c4-407d-b704-b164ccc418d6">
+
 
 
 
